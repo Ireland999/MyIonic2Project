@@ -1,0 +1,16 @@
+pic-item{
+	.image-container img{
+		float: left;
+	   	width: 114px;
+	   	height: 114px;
+	    padding:2px;
+	    background-position:center;  
+	}
+	@media screen and (max-width: 320px){
+		.image-container img{
+			width: 95px;
+	    	height: 95px;
+		}
+		
+	}
+}

@@ -1,0 +1,40 @@
+<!-- Segment in a header -->
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [color]="secondary" [(ngModel)]="image">
+      <ion-segment-button value="picture">
+        照片
+      </ion-segment-button>
+      <ion-segment-button value="album">
+        相册
+      </ion-segment-button>
+    </ion-segment>	
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div [ngSwitch]="image">
+  <ion-list *ngSwitchCase="'picture'">
+    <ion-item>
+    	<h5>2017-09-06</h5>
+    	<ion-thumbnail item-start class="image-container clearfix">
+      	<img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-duckling-2.jpg">
+        <img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-duckling-2.jpg">
+        <img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-duckling-2.jpg">
+        <img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-duckling-2.jpg">
+    	</ion-thumbnail>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngSwitchCase="'album'">
+    <ion-item (click)="itemTapped($event, id)">
+    	<div item-start class="album-container clearfix">
+        <img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-duckling-2.jpg">
+        <div class="album-desc">
+          <p>相机</p>
+          <p><em>56</em>张照片</p>
+        </div>
+        <ion-icon class="arrow-forward" name="arrow-forward" md="md-arrow-forward"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>

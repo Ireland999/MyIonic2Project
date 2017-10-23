@@ -1,0 +1,10 @@
+<div class="back" (click)="backToPage()">
+	<ion-icon class="arrow-back" name="arrow-back"></ion-icon>
+</div>
+<ion-slides initialSlide="{{currentIndex}}" zoom>
+  <ion-slide *ngFor="let item of items;let i = index;">
+  	<div class="swiper-zoom-container">
+    	<img src="{{item.url}}"/>
+    </div>
+  </ion-slide>
+</ion-slides>

@@ -1,0 +1,14 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>图片</ion-title>
+		<button ion-button small class="finish" (click)="finish($event)">完成</button>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content class="content">    
+	<ion-list>
+		<ion-item *ngFor="let item of items">
+			<img src="{{item.url}}"/>
+		</ion-item>
+	</ion-list>
+</ion-content>

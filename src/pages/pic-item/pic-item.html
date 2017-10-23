@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>
+      微信
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>    
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start class="image-container clearfix" #container>
+        <img src="http://p1.pstatp.com/large/1aa4000abe9cde40faf5" (click)="imageTap($event,0)" />
+        <img src="http://p3.pstatp.com/list/1bf500038a2a75e8ad46" (click)="imageTap($event,1)" />
+        <img src="http://p1.pstatp.com/list/1bf400044374c3383279" (click)="imageTap($event,2)" />
+        <img src="http://p1.pstatp.com/list/1bf400044376b329a88c" (click)="imageTap($event,3)" />
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>       
+</ion-content>

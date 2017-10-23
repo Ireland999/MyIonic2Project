@@ -1,0 +1,17 @@
+image-player{
+	.swiper-slide{
+		background: #2d2d2d;
+	}
+	.back{
+		position: absolute;
+		z-index: 1000000;
+	    left: 10px;
+	    top: 10px;
+		width: 3.2rem;
+		height: 3.2rem;
+	}
+	.arrow-back{
+	    font-size: 3.2rem;
+	    color: red;
+	}
+}

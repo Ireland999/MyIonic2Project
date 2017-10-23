@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button small class="send" (click)="send($event)">发送</button>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content class="content">    
+	<ion-item>
+		<textarea class="text-content" placeholder="这一刻的想法..."></textarea>
+	</ion-item>
+	<ion-item class="text-images">
+		<div class="container" [dragula]="'first-bag'" [dragulaModel]="imageList">
+			<img  class="image-item" *ngFor="let image of imageList;let i = index;"src="{{image.url}}" (click)="delete($event,image)"/>
+		</div>
+		<ion-icon name="add" *ngIf="len < 9"class="image-item add" (click)="selectPic($event)"></ion-icon>
+	</ion-item>
+	
+	<ion-item>
+	  <ion-label>是否显示位置</ion-label>
+	  <ion-toggle (ionChange)="change($event)"></ion-toggle>
+	</ion-item>
+	<ion-item class="location" *ngIf="position == true" >
+		<ion-label>
+			<ion-icon class="location-pin" name="pin"></ion-icon>
+			<span>{{addrmsg}}</span>
+		</ion-label>
+	</ion-item>
+	<div id='allMap'></div>
+</ion-content>

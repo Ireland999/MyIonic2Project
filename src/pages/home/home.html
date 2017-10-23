@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>语录</ion-title>
+  </ion-navbar>
+  <ion-icon name="camera" class="add" (click)="add($event)"></ion-icon>
+</ion-header>
+<ion-content>
+	<div class="head-container">
+		<img class="face-bg" src="http://p1.pstatp.com/large/1aa4000abe9cde40faf5"/>
+		<div class="person">
+			<span class="nickname">ireland</span>
+			<img class="head-img" src="http://p1.pstatp.com/large/1aa4000abe9cde40faf5"/>
+		</div>
+	</div>
+	<ion-refresher (ionRefresh)="doRefresh($event)" (ionPull)="doPulling($event)">
+		<ion-refresher-content
+		pullingText="下拉刷新"
+		refreshingText="加载中...">
+		</ion-refresher-content>
+	</ion-refresher>
+	<ion-list class="list-container" #container id="container">
+    	<ion-item class="item" *ngFor="let item of items">
+    		<p>
+				{{item.content}}
+			</p>
+			<div class="text-images clearfix" *ngIf="item.isHasImage == true">
+				<div  *ngFor="let picture of item.picture" class="image-item {{item.className}}-item" [style]="picture.style"><!--图片-->
+					<img  class="{{picture.className}}" src="{{picture.url}}"/>
+				</div>
+			</div>
+    	</ion-item>
+    </ion-list>
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)" distance="10%" immediate-check="false">
+		<ion-infinite-scroll-content  loadingSpinner="bubbles" loadingText="加载更多"></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

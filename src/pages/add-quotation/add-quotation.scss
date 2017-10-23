@@ -1,0 +1,40 @@
+add-quotation{
+	.send{
+		position: absolute;
+		right: 10px;
+		top: 3px;
+	}
+	.image-item{
+		width: 80px;
+		height: 80px;
+		float: left;
+		margin: 2px;
+		overflow: hidden;
+	}
+	.image-item img{
+		width: 100%;
+		height: 100%;
+	}
+	.add{
+		font-size: 80px;
+		border: 1px solid #f7f7f7;
+		color: #f1f1f1;
+		vertical-align: middle;
+		text-align: center;
+		margin-right: 0;
+	}
+	.text-content{
+		border:none;
+		outline: none;
+		width: 100%;
+		height: 80px;
+		overflow-y:auto; 
+		resize:none;
+	}
+	.content ion-item .item-inner{
+		border: none!important;
+	}
+	ion-icon.location-pin{
+		color:red!important;
+	}
+}
